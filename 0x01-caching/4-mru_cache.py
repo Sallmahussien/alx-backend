@@ -12,7 +12,7 @@ class MRUCache(BaseCaching):
         self.mru = None
 
     def put(self, key, item):
-        """"""
+        """Add an item to the cache with MRU eviction policy"""
         if key is None or item is None:
             return None
 
@@ -25,6 +25,7 @@ class MRUCache(BaseCaching):
         self.mru = key
 
     def get(self, key):
+        """Retrieve an item from the cache"""
         value = self.cache_data.get(key)
 
         if value:
