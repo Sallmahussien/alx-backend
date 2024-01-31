@@ -17,8 +17,11 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             return
 
-        if key in self.cache_data.keys():
+        if key in self.queue:
             self.cache_data[key] = item
+
+            self.queue.remove(key)
+            self.queue.append(key)
             return
 
         if len(self.queue) >= self.MAX_ITEMS:
