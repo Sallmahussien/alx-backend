@@ -56,9 +56,9 @@ def before_request():
 
 @app.route('/', strict_slashes=False)
 def index() -> str:
-    """Render 5-index.html"""
+    """Render 6-index.html"""
     username = g.user.get('name') if g.user else None
-    return render_template('5-index.html', username=username)
+    return render_template('6-index.html', username=username)
 
 
 if __name__ == "__main__":
